@@ -217,7 +217,7 @@ class TkinterMain():
 
     
     def addClient(self): #-- pip install PyMySQL -- need to install----
-        con=pymysql.Connect(host='localhost', user='root', password='sw06010814', 
+        con=pymysql.Connect(host='localhost', user='root', password='no', 
                                     database='project')
         cur=con.cursor()
         cur.execute("insert into client values(%s,%s,%s,%s,%s) ",(
@@ -235,7 +235,7 @@ class TkinterMain():
 
     def fetch_allClient(self):
         con=pymysql.Connect(host='localhost', database='project', user='root', 
-                          password='sw06010814')
+                          password='no')
         cur=con.cursor()
         cur.execute("select * from client")
         rows=cur.fetchall()
@@ -248,7 +248,7 @@ class TkinterMain():
 
     def displayClient(self):
         self.show_top_view()
-        con=pymysql.Connect(host='localhost', user='root', password='sw06010814', 
+        con=pymysql.Connect(host='localhost', user='root', password='no', 
                             database='project')
         
         cur=con.cursor()
@@ -280,7 +280,7 @@ class TkinterMain():
 
     
     def client_export_to_excel(self):
-        con = mysql.connector.connect(host='localhost', user='root', password='sw06010814', 
+        con = mysql.connector.connect(host='localhost', user='root', password='no', 
                             database='project')
         
         cur = con.cursor()
@@ -298,7 +298,7 @@ class TkinterMain():
     # ---delete client name -----
     def deleteClient(self):
         con=pymysql.Connect(host='localhost', database='project', user='root', 
-                          password='sw06010814')
+                          password='no')
         cur=con.cursor()
         cur.execute('delete from client where client_id=%s', self.del_var.get())
         con.commit()
@@ -307,7 +307,7 @@ class TkinterMain():
 
     #---- Update record -----
     def updateClient(self):
-        con=pymysql.Connect(host='localhost', user='root', password='sw06010814', 
+        con=pymysql.Connect(host='localhost', user='root', password='no', 
                                     database='project')
         cur=con.cursor()
         cur.execute("update client set client_name=%s, mobile=%s, home_address=%s ,email=%s where client_id=%s",(
@@ -326,7 +326,7 @@ class TkinterMain():
     #---- Search -----
     def searchClient(self):
         con=pymysql.Connect(host='localhost', database='project', user='root', 
-                          password='sw06010814')
+                          password='no')
         cur=con.cursor()
         cur.execute("select * from client where " +
         str(self.co_var.get())+" LIKE '%"+str(self.search_var.get())+"%'")
@@ -466,7 +466,7 @@ class TkinterMain():
         self.fetch_allGoods()
 
     def add_goods(self): #-- pip install PyMySQL -- need to install----
-        con=pymysql.Connect(host='localhost', user='root', password='sw06010814', 
+        con=pymysql.Connect(host='localhost', user='root', password='no', 
                                     database='project')
         cur=con.cursor()
         cur.execute("insert into goods values(%s,%s,%s,%s) ",(
@@ -483,7 +483,7 @@ class TkinterMain():
 
     def fetch_allGoods(self):
         con=pymysql.Connect(host='localhost', database='project', user='root', 
-                          password='sw06010814')
+                          password='no')
         cur=con.cursor()
         cur.execute("select * from goods")
         rows=cur.fetchall()
@@ -496,7 +496,7 @@ class TkinterMain():
     
     def displayGoods(self):
         self.show_top_view()
-        con=pymysql.Connect(host='localhost', user='root', password='sw06010814', 
+        con=pymysql.Connect(host='localhost', user='root', password='no', 
                             database='project')
         
         cur=con.cursor()
@@ -526,7 +526,7 @@ class TkinterMain():
 
     
     def goods_export_to_excel(self):
-        con = mysql.connector.connect(host='localhost', user='root', password='sw06010814', 
+        con = mysql.connector.connect(host='localhost', user='root', password='no', 
                             database='project')
         
         cur = con.cursor()
@@ -545,7 +545,7 @@ class TkinterMain():
     # ---delete goods name -----
     def deleteGoods(self):
         con=pymysql.Connect(host='localhost', database='project', user='root', 
-                          password='sw06010814')
+                          password='no')
         cur=con.cursor()
         cur.execute('delete from goods where goods_id=%s', self.del_var.get())
         con.commit()
@@ -554,7 +554,7 @@ class TkinterMain():
 
     #---- Update record -----
     def updateGoods(self):
-        con=pymysql.Connect(host='localhost', user='root', password='sw06010814', 
+        con=pymysql.Connect(host='localhost', user='root', password='no', 
                                     database='project')
         cur=con.cursor()
         cur.execute("update goods set goods_barcode=%s, goods_name=%s, Production_place=%s where goods_id=%s",(
@@ -572,7 +572,7 @@ class TkinterMain():
     #---- Search -----
     def searchGoods(self):
         con=pymysql.Connect(host='localhost', database='project', user='root', 
-                          password='sw06010814')
+                          password='no')
         cur=con.cursor()
         cur.execute("select * from goods where " +
         str(self.co_var.get())+" LIKE '%"+str(self.search_var.get())+"%'")
@@ -719,7 +719,7 @@ class TkinterMain():
         self.fetch_allPurchase()
 
     def addPurchase(self): #-- pip install PyMySQL -- need to install----
-        con=pymysql.Connect(host='localhost', user='root', password='sw06010814', 
+        con=pymysql.Connect(host='localhost', user='root', password='no', 
                                     database='project')
         cur=con.cursor()
         cur.execute("insert into purchase values(%s,%s,%s,%s,DEFAULT,%s) ",(
@@ -737,7 +737,7 @@ class TkinterMain():
 
     def fetch_allPurchase(self):
         con=pymysql.Connect(host='localhost', database='project', user='root', 
-                          password='sw06010814')
+                          password='no')
         cur=con.cursor()
         cur.execute("select * from purchase")
         rows=cur.fetchall()
@@ -750,7 +750,7 @@ class TkinterMain():
 
     def displayPurchase(self):
         self.show_top_view()
-        con=pymysql.Connect(host='localhost', user='root', password='sw06010814', 
+        con=pymysql.Connect(host='localhost', user='root', password='no', 
                             database='project')
         
         cur=con.cursor()
@@ -783,7 +783,7 @@ class TkinterMain():
 
     
     def purchase_export_to_excel(self):
-        con = mysql.connector.connect(host='localhost', user='root', password='sw06010814', 
+        con = mysql.connector.connect(host='localhost', user='root', password='no', 
                             database='project')
         
         cur = con.cursor()
@@ -801,7 +801,7 @@ class TkinterMain():
     # ---delete purchase name -----
     def deletePurchase(self):
         con=pymysql.Connect(host='localhost', database='project', user='root', 
-                          password='sw06010814')
+                          password='no')
         cur=con.cursor()
         cur.execute('delete from purchase where purchase_id=%s', self.del_var.get())
         con.commit()
@@ -810,7 +810,7 @@ class TkinterMain():
 
     #---- Update record -----
     def updatePurchase(self):
-        con=pymysql.Connect(host='localhost', user='root', password='sw06010814', 
+        con=pymysql.Connect(host='localhost', user='root', password='no', 
                                     database='project')
         cur=con.cursor()
         cur.execute("update purchase set purchase_price=%s, purchase_number=%s, purchase_money=DEFAULT, purchase_date=%s where purchase_id=%s",(
@@ -828,7 +828,7 @@ class TkinterMain():
     #---- Search -----
     def searchPurchase(self):
         con=pymysql.Connect(host='localhost', database='project', user='root', 
-                          password='sw06010814')
+                          password='no')
         cur=con.cursor()
         cur.execute("select * from purchase where " +
         str(self.co_var.get())+" LIKE '%"+str(self.search_var.get())+"%'")
@@ -985,7 +985,7 @@ class TkinterMain():
         self.fetch_allSale()
 
     def addSale(self): #-- pip install PyMySQL -- need to install----
-        con=pymysql.Connect(host='localhost', user='root', password='sw06010814', 
+        con=pymysql.Connect(host='localhost', user='root', password='no', 
                                     database='project')
         cur=con.cursor()
         cur.execute("insert into sale values(%s,%s,%s,%s,%s,DEFAULT,%s) ",(
@@ -1004,7 +1004,7 @@ class TkinterMain():
 
     def fetch_allSale(self):
         con=pymysql.Connect(host='localhost', database='project', user='root', 
-                          password='sw06010814')
+                          password='no')
         cur=con.cursor()
         cur.execute("select * from sale")
         rows=cur.fetchall()
@@ -1017,7 +1017,7 @@ class TkinterMain():
 
     def displaySale(self):
         self.show_top_view()
-        con=pymysql.Connect(host='localhost', user='root', password='sw06010814', 
+        con=pymysql.Connect(host='localhost', user='root', password='no', 
                             database='project')
         
         cur=con.cursor()
@@ -1051,7 +1051,7 @@ class TkinterMain():
 
     
     def sale_export_to_excel(self):
-        con = mysql.connector.connect(host='localhost', user='root', password='sw06010814', 
+        con = mysql.connector.connect(host='localhost', user='root', password='no', 
                             database='project')
         
         cur = con.cursor()
@@ -1069,7 +1069,7 @@ class TkinterMain():
     # ---delete sale name -----
     def deleteSale(self):
         con=pymysql.Connect(host='localhost', database='project', user='root', 
-                          password='sw06010814')
+                          password='no')
         cur=con.cursor()
         cur.execute('delete from sale where sale_id=%s', self.del_var.get())
         con.commit()
@@ -1078,7 +1078,7 @@ class TkinterMain():
 
     #---- Update record -----
     def updateSale(self):
-        con=pymysql.Connect(host='localhost', user='root', password='sw06010814', 
+        con=pymysql.Connect(host='localhost', user='root', password='no', 
                                     database='project')
         cur=con.cursor()
         cur.execute("update sale set sale_price=%s, sale_number=%s, sale_sum=DEFAULT, sale_date=%s where sale_id=%s",(
@@ -1096,7 +1096,7 @@ class TkinterMain():
     #---- Search -----
     def searchSale(self):
         con=pymysql.Connect(host='localhost', database='project', user='root', 
-                          password='sw06010814')
+                          password='no')
         cur=con.cursor()
         cur.execute("select * from sale where " +
         str(self.co_var.get())+" LIKE '%"+str(self.search_var.get())+"%'")
